@@ -1,0 +1,11 @@
+<div class="card-columns animate__animated animate__fadeInUp">
+  <div class="card"  *ngFor="let lista of listaVideos">
+    <a [routerLink]="['/curso',lista.id]" (click)="sumarVisita(lista.nombre)"><img [src]="lista.url_miniatura" class="card-img-top" alt="..."></a>
+    <div class="card-body">
+      <a [routerLink]="['/curso',lista.id]" (click)="sumarVisita(lista.nombre)" class="btn btn-outline-secondary btn-sm float-right" style="text-decoration: none;"><strong> Ver Tutorial</strong> </a>
+      <app-vistas [nombre]="lista.nombre"></app-vistas>
+      <p class="card-text"><strong>{{lista.nombre}}</strong></p>
+
+    </div>
+  </div>
+</div>

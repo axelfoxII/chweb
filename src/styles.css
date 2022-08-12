@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+footer {
+
+  position: absolute;
+  width: 100%;
+  color: white;
+  margin-bottom:20em;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* .scroll {
+
+  height: 900px;
+  max-height:250px;
+  overflow-y: auto;
+} */
+

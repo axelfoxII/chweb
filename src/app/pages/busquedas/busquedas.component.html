@@ -1,0 +1,56 @@
+<div class="container mt-3" style="margin-bottom:260px;">
+  <h1
+    class="header mt-3 mb-3 text-center"
+
+  >
+    <i class="fa fa-youtube" aria-hidden="true"></i>
+    <strong> TUTORIALES DEL CANAL </strong>
+  </h1>
+
+  <mat-form-field>
+
+    <input
+      matInput
+      (keyup)="applyFilter($any($event.target).value)"
+      placeholder="Filtrar Datos"
+
+    />
+  </mat-form-field>
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+    <!-- Position Column -->
+    <ng-container matColumnDef="imagen">
+      <th mat-header-cell *matHeaderCellDef>Imagen</th>
+      <td mat-cell *matCellDef="let element">
+        <a [routerLink]="['/curso',element.id]" (click)="sumarVisita(element.nombre)"><img [src]="element.url_miniatura" with="90" height="90"/></a>
+      </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="nombre">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Nombre</th>
+      <td mat-cell *matCellDef="let element"><p ><strong>{{ element.nombre }}</strong></p></td>
+    </ng-container>
+      <!-- Name Column -->
+      <ng-container matColumnDef="ver">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Ver Videos</th>
+        <td mat-cell *matCellDef="let element"><a class="btn btn-secondary btn-xs" [routerLink]="['/curso',element.id]" (click)="sumarVisita(element.nombre)" >Ir al tutorial</a></td>
+      </ng-container>
+    <!-- Name Column -->
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+  <mat-paginator
+    [length]="100"
+    [pageSize]="10"
+    [pageSizeOptions]="[5, 10, 20]"
+    #pagination
+  >
+  </mat-paginator>
+
+  <a routerLink="/home" style="text-decoration: none"><i class="fa fa-arrow-circle-left"></i> REGRESAR</a>
+</div>
+
+
+
