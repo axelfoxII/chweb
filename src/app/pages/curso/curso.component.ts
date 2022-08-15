@@ -46,7 +46,9 @@ export class CursoComponent implements OnInit {
     this.videoSvc.getIdLista(this.idVideos).subscribe((resp: ListaVideosModel) => {
 
       this.titulo = {
-        nombre: resp.nombre
+        descripcion:resp.descripcion,
+        nombre: resp.nombre,
+        recursos:resp.recursos
       }
 
     })

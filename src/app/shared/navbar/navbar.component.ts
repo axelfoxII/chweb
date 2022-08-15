@@ -9,10 +9,28 @@ import Swal from 'sweetalert2';
 })
 export class NavbarComponent implements OnInit {
 
-  year = new Date();
+  fecha:number = Date.now();
+  hora:any;
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(){
+    this.mostrarHora();
+  }
+
+  mostrarHora(){
+
+    /* this.hora = new Date().toLocaleString("es-US"); */
+    this.hora = new Date();
+
+    console.log(this.hora);
+
+         setInterval(() => {
+
+        this.hora = new Date();
+
+      }, 1000);
+
+  }
 
 
 }

@@ -5,6 +5,10 @@ import { RouterModule } from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireMessagingModule } from '@angular/fire/compat/messaging';
+
+
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -27,6 +31,9 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { VistasComponent } from './pages/vistas/vistas.component';
 import { ScrollToTopComponent } from './shared/scroll-to-top/scroll-to-top.component';
+
+import { environment } from '../environments/environment';
+
 
 @NgModule({
   declarations: [
@@ -56,6 +63,8 @@ import { ScrollToTopComponent } from './shared/scroll-to-top/scroll-to-top.compo
     MatSortModule,
     MatIconModule,
     MatButtonModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireMessagingModule
 
   ],
   providers: [ ],

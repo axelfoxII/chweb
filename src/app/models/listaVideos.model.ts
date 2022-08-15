@@ -5,6 +5,6 @@ export class ListaVideosModel{
   url_miniatura?:string;
   descripcion?:string;
   recursos?:string;
-  vistas?:string;
+  createAt?:number;
 
 }

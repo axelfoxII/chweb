@@ -35,6 +35,7 @@ export class RecomendadosComponent implements OnInit {
           id: res[i].id,
           nombre:res[i].nombre,
           url_miniatura:res[i].url_miniatura,
+          createAt:res[i].createAt,
 
 
         })
@@ -44,7 +45,7 @@ export class RecomendadosComponent implements OnInit {
       }
 
       this.listas.sort(function(a:any,b:any){
-        return (b.vistas - a.vistas)
+        return (b.createAt - a.createAt);
       })
 
       this.listaVideos = this.listas;

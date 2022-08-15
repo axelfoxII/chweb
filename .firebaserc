@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "canal-axelfoxii": {
+      "hosting": {
+        "axelfoxii-code": [
+          "canal-axelfoxii"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "canal-axelfoxii"
+  }
+}
